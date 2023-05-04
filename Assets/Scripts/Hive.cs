@@ -34,7 +34,7 @@ public class Hive : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             UIPanel.SetActive(false);
-            Player.instance.mouseLook.LockCursor();
+            Player.instance.mouseLook.LockCursor(this);
         }
     }
 
@@ -96,7 +96,7 @@ public class Hive : MonoBehaviour
 
     public void UseRoyalJellyOn(int index)
     {
-        bees[index].tier = (BeeTier)Mathf.Clamp((int)GenerateTier() + 1, 0, 4);
+        bees[index].tier = (BeeTier)Mathf.Clamp((int)GenerateTier() + 1, 0, 3);
 
         usingRoyalJelly = false;
 
@@ -166,7 +166,7 @@ public class Hive : MonoBehaviour
         {
             int level = 0;
             foreach (Bee bee in bees)
-                level += Random.Range(-5, 5) + bee.level * 50 * ((int)bee.tier + 1);
+                level += Random.Range(-5, 5) + bee.level * 30 * ((int)bee.tier + 1);
 
             if (Player.instance.pollen - level < 0)
                 level = Player.instance.pollen;

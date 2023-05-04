@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
 
     void Movement()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.4f, ~(1 << 3), QueryTriggerInteraction.Ignore);
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, ~(1 << 3), QueryTriggerInteraction.Ignore);
 
         if (isGrounded && velocity.y < 0.0f)
             velocity.y = -2.0f;
@@ -76,12 +76,12 @@ public class Player : MonoBehaviour
 
     public bool IsOnField()
     {
-        return Physics.CheckSphere(groundCheck.position, 0.4f, 1 << 10);
+        return Physics.CheckSphere(groundCheck.position, 0.2f, 1 << 10);
     }
 
     public FieldType GetFieldType()
     {
-        return Physics.OverlapSphere(groundCheck.position, 0.4f, 1 << 10)[0].GetComponent<Field>().fieldType;
+        return Physics.OverlapSphere(groundCheck.position, 0.2f, 1 << 10)[0].GetComponent<Field>().fieldType;
     }
 
     void UpdateUI()
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             sidePanel.SetActive(!sidePanel.active);
-            mouseLook.SetCursorLockState(!sidePanel.active);
+            mouseLook.SetCursorLockState(!sidePanel.active, this);
         }
     }
 

@@ -70,7 +70,7 @@ public class Egg : MonoBehaviour
 
         UIPrice.text = $"{price} Méz";
 
-        Player.instance.mouseLook.UnlockCursor();
+        Player.instance.mouseLook.UnlockCursor(this);
     }
 
     void CloseMenu()
@@ -78,7 +78,7 @@ public class Egg : MonoBehaviour
         open = false;
 
         UIPanel.SetActive(false);
-        Player.instance.mouseLook.LockCursor();
+        Player.instance.mouseLook.LockCursor(this);
     }
 
     private void OnTriggerEnter(Collider other)

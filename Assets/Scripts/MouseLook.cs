@@ -9,12 +9,13 @@ public class MouseLook : MonoBehaviour
     public Transform body;
 
     public bool locked = true;
+    public Dictionary<MonoBehaviour, bool> locker = new Dictionary<MonoBehaviour, bool>();
 
     float xRot = 0.0f;
 
     void Start()
     {
-        LockCursor();
+        LockCursor(this);
     }
 
     void Update()
@@ -32,29 +33,41 @@ public class MouseLook : MonoBehaviour
         body.Rotate(Vector3.up * mx);
     }
 
-    public void SetCursorLockState(bool active)
+    public void SetCursorLockState(bool active, MonoBehaviour caller)
     {
-        if (active) LockCursor();
-        else UnlockCursor();
+        if (active) LockCursor(caller);
+        else UnlockCursor(caller);
     }
 
-    public void LockCursor()
+    public void LockCursor(MonoBehaviour caller)
     {
-        locked = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        locker[caller] = true;
+
+        bool _lock = true;
+        foreach (KeyValuePair<MonoBehaviour, bool> kv in locker)
+        {
+            if (!kv.Value)
+                _lock = false;
+        }
+
+        locked = _lock;
+
+        if (locked)
+            Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void UnlockCursor()
+    public void UnlockCursor(MonoBehaviour caller)
     {
+        locker[caller] = false;
         locked = false;
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void ToggleCursor()
+    public void ToggleCursor(MonoBehaviour caller)
     {
         if (locked)
-            UnlockCursor();
+            UnlockCursor(caller);
         else
-            LockCursor();
+            LockCursor(caller);
     }
 }

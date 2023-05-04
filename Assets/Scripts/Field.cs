@@ -12,7 +12,7 @@ public class Field : MonoBehaviour
 
     [SerializeField] GameObject cookie;
 
-    float nextDrop = 20.0f;
+    float nextDrop = 5.0f;
 
     void Start()
     {
@@ -47,7 +47,7 @@ public class Field : MonoBehaviour
 
                 Instantiate(cookie, new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z), Quaternion.identity);
 
-                nextDrop = Time.time + 10.0f;
+                nextDrop = Time.time + 5.0f;
             }
         }
     }

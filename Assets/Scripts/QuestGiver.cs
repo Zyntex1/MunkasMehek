@@ -16,7 +16,7 @@ public class QuestGiver : MonoBehaviour
     public void DisplayPanel()
     {
         UIPanel.SetActive(true);
-        Player.instance.mouseLook.UnlockCursor();
+        Player.instance.mouseLook.UnlockCursor(this);
 
         UIDescription.text = string.Empty;
 
@@ -29,7 +29,7 @@ public class QuestGiver : MonoBehaviour
     public void ClosePanel()
     {
         UIPanel.SetActive(false);
-        Player.instance.mouseLook.LockCursor();
+        Player.instance.mouseLook.LockCursor(this);
     }
 
     public void AcceptQuest()
