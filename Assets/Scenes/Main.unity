@@ -37541,6 +37541,7 @@ GameObject:
   - component: {fileID: 933265255}
   - component: {fileID: 933265257}
   - component: {fileID: 933265256}
+  - component: {fileID: 933265258}
   m_Layer: 0
   m_Name: Create007
   m_TagString: Untagged
@@ -37613,6 +37614,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933265254}
+  m_Mesh: {fileID: 4017437624730759686, guid: 1837ed4889dd6f74ca9981b41f0cd855, type: 3}
+--- !u!64 &933265258
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933265254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4017437624730759686, guid: 1837ed4889dd6f74ca9981b41f0cd855, type: 3}
 --- !u!1 &934189885
 GameObject:
@@ -43823,6 +43838,7 @@ GameObject:
   - component: {fileID: 1087239388}
   - component: {fileID: 1087239390}
   - component: {fileID: 1087239389}
+  - component: {fileID: 1087239391}
   m_Layer: 0
   m_Name: Create006
   m_TagString: Untagged
@@ -43895,6 +43911,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087239387}
+  m_Mesh: {fileID: 3100747086224917321, guid: 1837ed4889dd6f74ca9981b41f0cd855, type: 3}
+--- !u!64 &1087239391
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087239387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 3100747086224917321, guid: 1837ed4889dd6f74ca9981b41f0cd855, type: 3}
 --- !u!1 &1088353568
 GameObject:
@@ -58195,6 +58225,7 @@ GameObject:
   - component: {fileID: 1441774835}
   - component: {fileID: 1441774837}
   - component: {fileID: 1441774836}
+  - component: {fileID: 1441774838}
   m_Layer: 0
   m_Name: Create003
   m_TagString: Untagged
@@ -58267,6 +58298,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441774834}
+  m_Mesh: {fileID: 4152773521483365320, guid: 1837ed4889dd6f74ca9981b41f0cd855, type: 3}
+--- !u!64 &1441774838
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441774834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4152773521483365320, guid: 1837ed4889dd6f74ca9981b41f0cd855, type: 3}
 --- !u!4 &1441893270 stripped
 Transform:

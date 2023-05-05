@@ -19,6 +19,8 @@ public class Hive : MonoBehaviour
     public bool usingRoyalJelly;
     public bool usingCookie;
 
+    bool converting;
+
     void Awake()
     {
         instance = this;
@@ -31,6 +33,23 @@ public class Hive : MonoBehaviour
 
     void Update()
     {
+        if (converting)
+        {
+            for (int i = 0; i < bees.Count; i++)
+            {
+                Transform t = GetSlot(i).GetChild(0);
+                t.Rotate(0.0f, 0.5f, 0.0f, Space.Self);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < bees.Count; i++)
+            {
+                Transform t = GetSlot(i).GetChild(0);
+                t.rotation = Quaternion.identity;
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             UIPanel.SetActive(false);
@@ -162,6 +181,8 @@ public class Hive : MonoBehaviour
 
     IEnumerator Convert()
     {
+        converting = true;
+
         while (Player.instance.pollen > 0)
         {
             int level = 0;
@@ -176,6 +197,8 @@ public class Hive : MonoBehaviour
 
             yield return new WaitForSeconds(1.0f);
         }
+
+        converting = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -186,7 +209,10 @@ public class Hive : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetKey(KeyCode.E))
-            StartCoroutine(Convert());
+        {
+            if (!converting)
+                StartCoroutine(Convert());
+        }
     }
 
     private void OnTriggerExit(Collider other)

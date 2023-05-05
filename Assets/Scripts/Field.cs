@@ -32,6 +32,12 @@ public class Field : MonoBehaviour
 
     void Update()
     {
+        if (!Player.instance.IsOnField())
+            return;
+
+        if (Player.instance.GetFieldType() != fieldType)
+            return;
+
         if (nextDrop < Time.time)
         {
             float rand = Random.Range(0.0f, 1.0f);

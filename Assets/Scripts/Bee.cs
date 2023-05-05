@@ -54,7 +54,7 @@ public class Bee : MonoBehaviour
 
     void Animate()
     {
-        transform.Rotate(new Vector3(0.0f, 0.0f, Mathf.Sin(Time.time * 20.0f) * 5.0f), Space.Self);
+        transform.Rotate(0.0f, 0.0f, Mathf.Sin(Time.time * 20.0f) * 5.0f, Space.Self);
     }
 
     void Harvest()
