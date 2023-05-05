@@ -932,7 +932,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18748780
 MonoBehaviour:
@@ -967,7 +967,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Common Bee
+  m_Text: "Gyakori m\xE9hecske"
 --- !u!222 &18748781
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35537,7 +35537,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Level: 1'
+  m_Text: 'Szint: 1'
 --- !u!222 &868972746
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -83432,7 +83432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tier: Common'
+  m_Text: 'Rang: Gyakori'
 --- !u!222 &2087834027
 CanvasRenderer:
   m_ObjectHideFlags: 0
