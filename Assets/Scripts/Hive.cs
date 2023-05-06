@@ -38,7 +38,7 @@ public class Hive : MonoBehaviour
             for (int i = 0; i < bees.Count; i++)
             {
                 Transform t = GetSlot(i).GetChild(0);
-                t.Rotate(0.0f, 0.5f, 0.0f, Space.Self);
+                t.Rotate(0.0f, 1.0f, 0.0f, Space.Self);
             }
         }
         else
@@ -46,7 +46,7 @@ public class Hive : MonoBehaviour
             for (int i = 0; i < bees.Count; i++)
             {
                 Transform t = GetSlot(i).GetChild(0);
-                t.rotation = Quaternion.identity;
+                t.localRotation = Quaternion.identity;
             }
         }
 
