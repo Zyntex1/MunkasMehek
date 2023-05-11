@@ -218,6 +218,7 @@ public class Hive : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         StopAllCoroutines();
+        converting = false;
 
         GameInstructor.instance.Close();
     }
