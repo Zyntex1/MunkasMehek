@@ -12,7 +12,7 @@ public class Field : MonoBehaviour
 
     [SerializeField] GameObject cookie;
 
-    float nextDrop = 5.0f;
+    float nextDrop = 3.0f;
 
     void Start()
     {
@@ -42,7 +42,7 @@ public class Field : MonoBehaviour
         {
             float rand = Random.Range(0.0f, 1.0f);
 
-            if (rand <= 0.01f)
+            if (rand <= 0.05f)
             {
                 Player.instance.royalJellies++;
             }
@@ -53,7 +53,7 @@ public class Field : MonoBehaviour
 
                 Instantiate(cookie, new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z), Quaternion.identity);
 
-                nextDrop = Time.time + 5.0f;
+                nextDrop = Time.time + 3.0f;
             }
         }
     }
